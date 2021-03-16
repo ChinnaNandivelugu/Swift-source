@@ -1,0 +1,91 @@
+
+@PasswordValidation
+Feature: Validating both positive and negative scenarios for password
+
+@Password_Success
+Scenario Outline: Verify the password has been accepted when entered with alpha numeric and specila char with length of 6 characters
+
+Given I launch the browser <URL>
+When I enter <UserId> in Customer login text field
+Then I enter the valid  <Password> in Customer login pswd text field
+And I will click on Login button
+And Home page should be displayed
+Example:
+|UserId|URL|Password|
+|Login123|www.google.com|Swara_j735|
+
+@Password_Success_morethan_6_Chars
+Scenario Outline: Verify the password has been accepted when entered with alpha numeric and specila char length more than 6 characters
+
+Given I launch the browser <URL>
+When I enter <UserId> in Customer login text field
+Then I enter the valid  <Password> in Customer login pswd text field
+And I will click on Login button
+And Home page should be displayed
+Example:
+|UserId|URL|Password|
+|Login123|www.google.com|Swahhhhhra_j735|
+
+
+@Invaild_password_without_number_and_Special
+Scenario Outline: Verify the password has not been accepted when entered with 6 characters without number and speacil char
+
+Given I launch the browser <URL>
+When I enter <UserId> in Customer login text field
+Then I enter the invalid  <Password> in Customer login pswd text field
+And I will click on Login button
+And  should throw invalid password error message
+Example:
+|UserId|URL|Password|
+|Login123|www.google.com|swaraj|
+
+@Invaild_password_without_number
+Scenario Outline: Verify the password has not been accepted when entered with 6 characters without number 
+Given I launch the browser <URL>
+When I enter <UserId> in Customer login text field
+Then I enter the invalid  <Password> in Customer login pswd text field
+And I will click on Login button
+And  should throw invalid password error message
+Example:
+|UserId|URL|Password|
+|Login123|www.google.com|swa_raj|
+
+
+@Invaild_password_without_speacial_char
+Scenario Outline: Verify the password has not been accepted when entered with 6 characters without speacil char
+
+Given I launch the browser <URL>
+When I enter <UserId> in Customer login text field
+Then I enter the invalid  <Password> in Customer login pswd text field
+And I will click on Login button
+And  should throw invalid password error message
+Example:
+|UserId|URL|Password|
+|Login123|www.google.com|swa1aj|
+
+
+@Invaild_password_less_than_6_letters
+Scenario Outline: Verify the password has not been accepted when entered with less than 6 characters with number and speacil char
+
+Given I launch the browser <URL>
+When I enter <UserId> in Customer login text field
+Then I enter the invalid  <Password> in Customer login pswd text field
+And I will click on Login button
+And  should throw invalid password error message
+Example:
+|UserId|URL|Password|
+|Login123|www.google.com|sw_1j|
+
+
+@Invaild_password_morethan_6_letttes_without_number_and_special_char
+Scenario Outline: Verify the password has not been accepted when entered morethan 6 characters without number and speacil char
+
+Given I launch the browser <URL>
+When I enter <UserId> in Customer login text field
+Then I enter the invalid  <Password> in Customer login pswd text field
+And I will click on Login button
+And  should throw invalid password error message
+Example:
+|UserId|URL|Password|
+|Login123|www.google.com|swarajeee|
+
