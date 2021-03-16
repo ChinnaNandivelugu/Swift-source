@@ -1,0 +1,35 @@
+import unittest
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.ui import Select
+
+Class Gaming(unittest.Testcase):
+
+def setUp(self):
+        self.driver = webdriver.Firefox()
+
+    def test_Open_gaming_page(self):
+        url ="https://moneygaming.qa.gameaccount.com/"
+        self.driver.maximize_window()
+        self.driver.get(url)
+        self.driver.implicitly_wait(2)
+        assert "Play Online Casino Games Now" in self.driver.title,"This is wrong page %s"%self.driver.title
+
+    def create_User(self):
+        Title = Select(self.driver.find_element_by_name("title"))
+        Title.select_by_value("Mr")
+        self.driver.find_element_by_id("forename").send_keys("china")
+        self.driver.find_element_by_xpath("//*[@id="signupForm"]/fieldset[1]/input[2]").send_keys("Nandivelugu")
+        self.driver.find_element_by_xpath(@//*[@id="checkbox"].click
+        self.driver.find_element_by_xpath("/html/body/div[2]/div[1]/div[2]/div[1]/a[2]']").click()
+        self.driver.implicitly_wait(5)
+        self.driver.find_element_by_name("dob").send_keys("Keys.Return")
+        assert "This field is required" not in self.driver.page_source
+    def tearDown(self):
+        self.driver.close()
+        
+
+if __name__ == "__main__":
+    unittest.main()    
+        
+        
